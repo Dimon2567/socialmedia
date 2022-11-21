@@ -1,5 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
+import Header from "./components/header/Header.js";
+import Navbar from "./components/Navbar/Navbar.js";
+import Profile from "./components/Profile/Profile.js";
 
 function App() {
   return (
@@ -12,12 +15,3 @@ function App() {
 }
 
 export default App;
-function Header() {
-  return <div className="header">Header</div>;
-}
-function Navbar() {
-  return <div className="Navbar">Navbar</div>;
-}
-function Profile() {
-  return <div className="Profile">Profile</div>;
-}
