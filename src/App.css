@@ -25,6 +25,3 @@ body {
 .navbar {
   grid-area: n;
 }
-.profile {
-  grid-area: p;
-}
