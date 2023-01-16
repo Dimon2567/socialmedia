@@ -1,16 +1,15 @@
 import React from "react";
 import Post from "./post/post.js";
-function Posts() {
+
+function Posts(props) {
   return (
     <div className="posts">
       <h2>My posts</h2>
       <input placeholder="Enter" />
       <button className="button"> That post</button>
-      <Post message="Привет" />
-      <Post message="Завтра" />
-      <Post message="Утро" />
-      <Post message="Вечер" />
-      <Post message="Сегодня" />
+      {props.postdata.map((e) => (
+        <Post Text={e.Text} id={e.id} likes={e.likes} />
+      ))}
     </div>
   );
 }

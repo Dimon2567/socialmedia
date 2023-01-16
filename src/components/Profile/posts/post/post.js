@@ -5,7 +5,8 @@ function Post(props) {
   return (
     <div className="post">
       <Profileinfo />
-      <p>{props.message}</p>
+      <p>{props.Text}</p>
+      <span>{props.likes}</span> likes
     </div>
   );
 }

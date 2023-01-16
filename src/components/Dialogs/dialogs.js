@@ -2,20 +2,8 @@ import React from "react";
 import "./Dialogs.css";
 import Dialogsitem from "./dialogsitem/Dialogsitem";
 import Message from "./message/message.js";
-let dialognames = [
-  { name: "Петров Петр", id: 1 },
-  { name: "Бил Гейтс", id: 2 },
-  { name: "Илон Маск", id: 3 },
-];
-let messageitem = [
-  { message: "Полетели на луну", id: 1 },
-  { message: "Ок. Как раз собираюсь", id: 2 },
-  {
-    message: "Меня не забудьте хоть",
-    id: 3,
-  },
-];
-function Dialogs() {
+
+function Dialogs(props) {
   return (
     <div className="dialogs">
       {/* <div className="message">
@@ -44,12 +32,12 @@ function Dialogs() {
         <Message message={messageitem[2].message} id={messageitem[2].id} />
       </div> */}
       <div className="dialog">
-        {dialognames.map((e) => (
+        {props.dialognames.map((e) => (
           <Dialogsitem name={e.name} id={e.id} />
         ))}
       </div>
       <div className="messages">
-        {messageitem.map((e) => (
+        {props.messageitem.map((e) => (
           <Message message={e.message} id={e.id} />
         ))}
       </div>
