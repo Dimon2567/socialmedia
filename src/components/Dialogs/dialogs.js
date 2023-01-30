@@ -41,6 +41,10 @@ function Dialogs(props) {
           <Message message={e.message} id={e.id} />
         ))}
       </div>
+      <div className="code">
+        <input placeholder="Ввести сообщение" type="text" />
+        <button>Отправить сообщение</button>
+      </div>
     </div>
   );
 }

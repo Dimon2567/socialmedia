@@ -9,7 +9,7 @@ function Profile(props) {
         <img src={ava} />
         <p> {props.name}</p>
       </div>
-      <Posts postdata={props.postdata} />
+      <Posts postdata={props.postdata} addPost={props.addPost} />
     </div>
   );
 }

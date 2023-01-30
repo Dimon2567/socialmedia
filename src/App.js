@@ -10,21 +10,35 @@ function App(props) {
     <div className="wrapper">
       <BrowserRouter>
         <Header />
-        <Navbar />
+        <Navbar navbar={props.state.navbar} />
         <div className="wrapper-content">
-          <Route exact path="/" render={() => <Profile />} />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <Profile
+                postdata={props.state.profilePage.postdata}
+                addPost={props.addPost}
+              />
+            )}
+          />
           <Route
             exact
             path="/profile"
-            render={() => <Profile postdata={props.postdata} />}
+            render={() => (
+              <Profile
+                postdata={props.state.profilePage.postdata}
+                addPost={props.addPost}
+              />
+            )}
           />
           <Route
             exact
             path="/dialogs"
             render={() => (
               <Dialogs
-                dialognames={props.dialognames}
-                messageitem={props.messageitem}
+                dialognames={props.state.dialogsPage.dialognames}
+                messageitem={props.state.dialogsPage.messageitem}
               />
             )}
           />
