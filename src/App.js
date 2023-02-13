@@ -4,14 +4,15 @@ import Header from "./components/header/Header.js";
 import Navbar from "./components/Navbar/Navbar.js";
 import Profile from "./components/Profile/Profile.js";
 import Dialogs from "./components/Dialogs/dialogs";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 function App(props) {
   return (
     <div className="wrapper">
       <BrowserRouter>
         <Header />
         <Navbar navbar={props.state.navbar} />
-        <div className="wrapper-content">
+        {/* <div className="wrapper-content"> */}
+        <Switch>
           <Route
             exact
             path="/"
@@ -39,10 +40,12 @@ function App(props) {
               <Dialogs
                 dialognames={props.state.dialogsPage.dialognames}
                 messageitem={props.state.dialogsPage.messageitem}
+                sendMessage={props.sendMessage}
               />
             )}
           />
-        </div>
+          {/* /div>  < */}
+        </Switch>
       </BrowserRouter>
     </div>
   );

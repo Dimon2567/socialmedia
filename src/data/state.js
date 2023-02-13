@@ -38,7 +38,17 @@ export let addPost = (postText) => {
     id: 34,
     likes: 46,
   };
-  state.profilePage.postdata.push(newPost);
+  state.profilePage.postdata.unshift(newPost);
+  console.log(state);
+  // renderTree(state);
+};
+export let sendMessage = (message) => {
+  let newMessage = {
+    message: message,
+    id: 54,
+  };
+  state.profilePage.postdata.unshift(newMessage);
   console.log(state);
 };
+
 export default state;

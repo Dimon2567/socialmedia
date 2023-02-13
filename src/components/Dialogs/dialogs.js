@@ -2,8 +2,13 @@ import React from "react";
 import "./Dialogs.css";
 import Dialogsitem from "./dialogsitem/Dialogsitem";
 import Message from "./message/message.js";
-
+let ref = React.createRef();
 function Dialogs(props) {
+  let sendMessage = () => {
+    // alert(document.querySelector("input").value);
+    console.log(ref);
+    props.sendMessage(ref.current.value);
+  };
   return (
     <div className="dialogs">
       {/* <div className="message">
@@ -42,8 +47,8 @@ function Dialogs(props) {
         ))}
       </div>
       <div className="code">
-        <input placeholder="Ввести сообщение" type="text" />
-        <button>Отправить сообщение</button>
+        <input ref={ref} placeholder="Ввести сообщение" type="text" />
+        <button onClick={sendMessage}>Отправить сообщение</button>
       </div>
     </div>
   );
